@@ -1,5 +1,7 @@
 # Garaje inteligente UNO · 1.0.2
 
+**Orden de inicio del portable:** `PanelGaraje.exe → Iniciar local (solo PC) o Iniciar LAN / Hotspot (PC y celular) → Abrir local → seleccionar COM → Conectar`. Para cambiar de local a LAN, detener primero el servidor. Para el teléfono: misma red → QR LAN → PIN del panel. Sigue [la guía con capturas](docs/GUIA_PANEL_Y_CELULAR.md).
+
 El portable incluye Python y .NET. No ejecute el instalador de dependencias para usar `PanelGaraje.exe`. Para ejecutar desde fuentes, consulte `docs/INSTALACION.md`. El driver CH340 oficial está en `support/ch340`; se instala manualmente solo si la placa lo necesita.
 
 Proyecto educativo: firmware autónomo, interfaz web adaptable al celular y panel de Windows independiente para administrar servidor, PIN, QR y acceso remoto.

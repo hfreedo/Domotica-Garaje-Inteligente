@@ -153,6 +153,20 @@ Se conserva la captura original para reconocer los cables. Sus colores difieren 
 
 ## Empezar en Windows
 
+**El punto de entrada del portable es `PanelGaraje.exe`.** El panel inicia el servidor; después **Abrir local** abre la interfaz donde seleccionas el COM y conectas el Arduino. No hace falta abrir `GarajeServidor.exe` por separado.
+
+| Uso | Orden a seguir |
+|---|---|
+| Solo PC | Panel → **Iniciar local** → esperar estado activo → **Abrir local** → COM → **Conectar** |
+| PC y celular en la misma red | Panel → **Iniciar LAN / Hotspot** → **Abrir local** y conectar COM → celular: **QR LAN → PIN** |
+| Prueba sin Arduino | Panel → pestaña **Modo demo** → **Iniciar demo** |
+
+Si ya iniciaste en local y quieres conectar el celular, pulsa **Detener servidor** antes de iniciar LAN. El modo LAN también permite usar la interfaz desde la PC. El botón LAN no crea un hotspot; PC y celular deben estar en una red que permita comunicarse.
+
+![Panel del portable con servidor local activo](docs/imagenes/panel/02-servidor-local-activo.png)
+
+Consulta la [guía del panel y conexión del celular, con capturas reales](docs/GUIA_PANEL_Y_CELULAR.md) para seguir cada paso. Los valores de IP y PIN de las capturas pertenecen a una sesión de prueba ya detenida: utiliza los de tu panel.
+
 En [Releases](https://github.com/hfreedo/Domotica-Garaje-Inteligente/releases/tag/v1.0.2), descargar `GarajeInteligente_v1.0.2_Windows.zip`, extraer todo y abrir `PanelGaraje.exe`. Python y .NET vienen incluidos: el portable no requiere instalar sus dependencias.
 
 Si el Arduino usa CH340 y no aparece su puerto COM, consultar `support/ch340/LEEME.md`. El release 1.0.2 incluye el instalador original del fabricante con firma verificada; nunca se ejecuta automáticamente.
@@ -169,6 +183,7 @@ El servidor por sí solo no necesita .NET. Para construir el panel y el portable
 
 ## Documentación
 
+- [Cómo iniciar el panel y conectar el celular, con capturas](docs/GUIA_PANEL_Y_CELULAR.md)
 - [Guía ilustrada: componentes, maqueta, cableado y primer ensayo](docs/GUIA_ILUSTRADA.md)
 - [Instalación, dependencias y solución de problemas](docs/INSTALACION.md)
 - [Montaje y calibración](docs/MONTAJE_Y_CALIBRACION.md)

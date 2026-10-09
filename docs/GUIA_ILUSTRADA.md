@@ -2,6 +2,8 @@
 
 [Volver al README y sus diagramas con flechas](../README.md).
 
+Para el orden de inicio en Windows y el acceso desde el teléfono, sigue [la guía del panel y celular con capturas reales](GUIA_PANEL_Y_CELULAR.md).
+
 Esta guía utiliza las siete imágenes proporcionadas por el usuario. Las vistas 3D explican la disposición propuesta; el diagrama de Cirkit permite seguir las conexiones. Las imágenes no acreditan pruebas físicas ni lecturas de sensores.
 
 ## 1. Reconocer los componentes

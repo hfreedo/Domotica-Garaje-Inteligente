@@ -1,5 +1,7 @@
 # Acceso local, LAN y ngrok
 
+Para empezar desde el portable y conectar el celular paso a paso, consulta [GUIA_PANEL_Y_CELULAR.md](GUIA_PANEL_Y_CELULAR.md), con capturas del panel. Abre primero `PanelGaraje.exe`: el panel inicia el servidor y **Abrir local** abre la interfaz donde conectas el COM.
+
 El panel Windows inicia y detiene el servidor. La interfaz web es la misma en PC y móvil, con los mismos controles. El servidor mantiene una única conexión serie al UNO; no abras simultáneamente el monitor serie del IDE.
 
 ## En la computadora
