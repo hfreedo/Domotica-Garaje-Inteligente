@@ -2,6 +2,10 @@
 
 Maqueta educativa con Arduino UNO, HC-SR04, sensor infrarrojo y uno o dos servos SG90. Incluye firmware autónomo, interfaz web en español y panel para Windows con acceso local o LAN.
 
+![Vista frontal del diseño de la maqueta: vehículo exterior, HC-SR04 sobre el acceso y puerta del garaje](docs/imagenes/maqueta-vista-frontal.png)
+
+El diseño muestra el vehículo frente al acceso y los sensores distribuidos entre exterior e interior. Sigue la [guía ilustrada paso a paso](docs/GUIA_ILUSTRADA.md) para identificar componentes, leer las vistas y preparar el montaje.
+
 ![Interfaz del garaje](docs/interfaz-demo.jpg)
 
 ## ¿Cómo funciona?
@@ -9,6 +13,10 @@ Maqueta educativa con Arduino UNO, HC-SR04, sensor infrarrojo y uno o dos servos
 El **HC-SR04 exterior** detecta un vehículo de juguete dentro del rango configurado y permite abrir cuando la puerta está cerrada. El **infrarrojo interior** registra que hubo presencia durante la apertura o la espera. Los **servos SG90** mueven la puerta con extremos calibrados individualmente.
 
 Una vez abierta, la puerta espera a que el exterior esté libre y después cierra. Si el exterior se bloquea o el ultrasónico pierde el eco durante el cierre, se ordena reabrir. Para salir, se solicita la apertura desde la interfaz.
+
+![Diseño de la maqueta con la puerta elevada y el vehículo en el exterior](docs/imagenes/maqueta-puerta-elevada.png)
+
+**Lectura de la imagen:** vehículo exterior → detección por HC-SR04 → orden de apertura → servos elevan la puerta. Después, la detección interior y el exterior libre determinan la espera para cerrar. La captura ilustra la geometría; las mediciones y el movimiento deben comprobarse en la maqueta real.
 
 ### Esquema 1 · Flujo del funcionamiento
 
@@ -75,6 +83,8 @@ El teléfono accede al servidor de la computadora por la misma red en modo LAN. 
 
 ## Esquema 2 · Conexiones de la maqueta
 
+![Componentes del proyecto: UNO, portapilas ilustrado, dos servos, infrarrojo y HC-SR04](docs/imagenes/componentes.png)
+
 El esquema usa los **pines iniciales del firmware**. Si se cambiaron desde la interfaz, el cableado debe coincidir con la configuración guardada. Las flechas indican qué puntos se conectan y, en las señales, el sentido de comunicación; la tierra común es una unión eléctrica.
 
 ```mermaid
@@ -133,6 +143,14 @@ La fuente regulada de 5V del dibujo es una referencia de alimentación. **La com
 
 Para un solo servo, omite las ramas del servo 2 y selecciona **1 servo** en la interfaz. D10 permanece reservado por la configuración inicial. Si se usan dos servos enfrentados, calibra sus extremos por separado y con el eje desacoplado.
 
+### Captura de Cirkit y corrección de tierra
+
+**Antes de seguir la captura:** el cable marrón de GND de los sensores parece conectado a **D13**. Esa rama debe terminar en la **distribución GND común conectada al GND del bloque POWER**, junto al negativo de la fuente de servos. D13 es un pin digital y no sirve como sustituto de GND. El esquema Mermaid y la tabla anterior indican las conexiones que se deben seguir.
+
+![Captura original de Cirkit: revisar y corregir la rama marrón de GND de sensores que parece llegar a D13](docs/imagenes/cirkit-original-revisar-gnd.png)
+
+Se conserva la captura original para reconocer los cables. Sus colores difieren del esquema textual: identifica cada terminal por su rótulo, no solo por el color. La fuente marcada 5V representa la alimentación externa de servos. Consulta la [guía ilustrada](docs/GUIA_ILUSTRADA.md#4-leer-el-cableado-de-cirkit) para seguir las ramas.
+
 ## Empezar en Windows
 
 En [Releases](https://github.com/hfreedo/Domotica-Garaje-Inteligente/releases/tag/v1.0.2), descargar `GarajeInteligente_v1.0.2_Windows.zip`, extraer todo y abrir `PanelGaraje.exe`. Python y .NET vienen incluidos: el portable no requiere instalar sus dependencias.
@@ -151,6 +169,7 @@ El servidor por sí solo no necesita .NET. Para construir el panel y el portable
 
 ## Documentación
 
+- [Guía ilustrada: componentes, maqueta, cableado y primer ensayo](docs/GUIA_ILUSTRADA.md)
 - [Instalación, dependencias y solución de problemas](docs/INSTALACION.md)
 - [Montaje y calibración](docs/MONTAJE_Y_CALIBRACION.md)
 - [Acceso remoto opcional](docs/ACCESO_REMOTO.md)
