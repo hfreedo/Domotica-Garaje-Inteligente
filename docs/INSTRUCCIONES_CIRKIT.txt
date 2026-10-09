@@ -1,0 +1,37 @@
+Genera el diagrama de cableado de un garaje con Arduino UNO R3,
+HC-SR04, módulo infrarrojo digital y dos servos SG90 posicionales.
+
+DISTRIBUCIÓN DE ALIMENTACIÓN
+1. Alimentar Arduino mediante USB.
+2. Usar exclusivamente un GND del bloque POWER del Arduino como
+   referencia del diagrama. No usar el GND junto a AREF.
+3. Conectar ese GND a una línea o bornera común de tierra.
+4. Conectar en paralelo a esa línea:
+   - GND del HC-SR04.
+   - GND del infrarrojo.
+   - Marrón/negro del servo 1.
+   - Marrón/negro del servo 2.
+   - Negativo de la salida de la alimentación externa de los servos.
+5. Desde 5V del mismo bloque POWER, crear una línea separada para:
+   - VCC del HC-SR04.
+   - VCC del infrarrojo compatible con 5 V.
+6. Los rojos de ambos servos van SOLO al positivo de su alimentación
+   externa adecuada. Representarla como fuente externa regulada de 5 V.
+   No conectar ese positivo al 5V, VIN ni 3.3V del Arduino.
+7. El retorno de los servos y el negativo de la fuente se unen directamente
+   en la distribución GND; no encaminar la corriente de los motores a
+   través de la placa Arduino.
+
+SEÑALES
+HC-SR04 TRIG -> D4
+HC-SR04 ECHO -> D2
+Infrarrojo OUT -> D7
+Servo 1 señal naranja/amarillo -> D9
+Servo 2 señal naranja/amarillo -> D10
+
+Usar negro para GND, rojo para alimentación y otros colores para señales.
+Rotular cada rama. Usar rótulos reales de los módulos, no asumir el orden
+de sus pines. No añadir módulo de carga ni condensador en este esquema.
+Si se representa el portapilas de 4 AA en lugar de la fuente de 5 V,
+mantener regulación a 5 V salvo que se haya verificado la compatibilidad
+del modelo exacto de servo con la tensión del portapilas.

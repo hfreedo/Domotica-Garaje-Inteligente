@@ -1,0 +1,11 @@
+{
+  "file": "CH341SER.EXE",
+  "source_page": "https://www.wch-ic.com/downloads/CH341SER.EXE.html?type=en",
+  "download_url": "https://www.wch-ic.com/download/file?id=65",
+  "retrieved": "2026-10-08",
+  "bytes": 799096,
+  "sha256": "458c37bdafbe4ce3cd0baf728c232b4b765b36d7463956e9b94cdf099212cad1",
+  "authenticode_status": "Valid",
+  "signer": "Nanjing Qinheng Microelectronics Co., Ltd.",
+  "certificate_thumbprint": "3AA97BB3F2B6B9C888D10D3A5CA6318F727F0E99"
+}

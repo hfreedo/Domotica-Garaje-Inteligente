@@ -1,0 +1,26 @@
+# Compilaciones, entregas y entornos locales
+.build/
+entregas/
+.venv/
+**/bin/
+**/obj/
+**/__pycache__/
+*.py[cod]
+*.log
+*.pdb
+.vs/
+.idea/
+.env
+.env.*
+!.env.example
+ngrok.yml
+ngrok.yaml
+support/ngrok/*.exe
+support/ch340/*.exe
+# Historial local de traslado y herramientas de una sola vez
+CONTINUIDAD_DEL_PROYECTO.md
+MANIFIESTO_TRASLADO_*.json
+tools/adapt_panel.py
+investigacion/render/
+investigacion/render_final/
+referencias/
